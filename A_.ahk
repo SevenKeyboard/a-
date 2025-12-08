@@ -4,6 +4,7 @@
 #Include .\lib\getCommandLine.ahk
 #Include .\lib\getKnownFolderPath.ahk
 #Include .\lib\guiControlGetLogFont.ahk
+#Include .\lib\OSVersion.ahk
 ;==============================================================
 ; A_ — Extended AutoHotkey A_* built-in variables and helpers
 ;
@@ -19,6 +20,8 @@ class VersionManager_A_
         A__VERSION := "1.0.0"
         if (!this._verCheck(GUICONTROLGETLOGFONT_VERSION, "1.0.0"))
             throw exception("guiControlGetLogFont version 1.x is required (minimum 1.0.0).")
+        if (!this._verCheck(OSVERSION_VERSION, "2.0.0"))
+            throw exception("OSVersion version 2.x is required (minimum 2.0.0).")
         return true
     }
     _verCheck(byRef actual, required)    {
