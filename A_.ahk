@@ -209,13 +209,13 @@ class A_
     */
     static CommandLine    {
         get  {
-            static vCommandLine:=GetCommandLine()
+            static vCommandLine:=getCommandLine()
             return vCommandLine
         }
     }
     static Argv    {
         get  {
-            static vArgv:=CommandLineToArgvW(A_.CommandLine)
+            static vArgv:=commandLineToArgvW(A_.CommandLine)
             return vArgv
         }
     }
@@ -233,7 +233,7 @@ class A_
     }
     static CommandLineArguments    {
         get  {
-            static vArguments:=RegExReplace(RegExReplace(GetCommandLine(),"s)^(?:`"\Q" A_.CommandLineExecutablePath "\E`"|\Q" A_.CommandLineExecutablePath "\E)(.*)","${1}"),"s)^ (.*)","${1}")
+            static vArguments:=regExReplace(regExReplace(getCommandLine(),"s)^(?:`"\Q" A_.CommandLineExecutablePath "\E`"|\Q" A_.CommandLineExecutablePath "\E)(.*)","${1}"),"s)^ (.*)","${1}")
             return vArguments
         }
     }
@@ -297,10 +297,10 @@ class A_
     static DpiForWindow(winTitle:="")    {
         return this._getDpiForWindow(winTitle)
     }
-    static DpiScaleForWindow(winTitle:="")    { ;  Relative to a scale of 96 (100%), the current window's aspect ratio. (스케일 96(100%)을 기준으로 했을 때, 현재 창의 비율.)
+    static DpiScaleForWindow(winTitle:="")    { ;  Relative to a scale of 96 (100%), the current window's aspect ratio.
         return (dpi:=this._getDpiForWindow(winTitle)?dpi/96:0)
     }
-    static ScreenDpiScaleForWindow(winTitle:="")    { ;  Relative to the main monitor's scale, the aspect ratio of the current window within the secondary monitor. (메인 모니터 스케일을 기준으로 했을 때, 보조 모니터에 속해있는 현재 창의 비율.)
+    static ScreenDpiScaleForWindow(winTitle:="")    { ;  Relative to the main monitor's scale, the aspect ratio of the current window within the secondary monitor.
         return (dpi:=this._getDpiForWindow(winTitle)?dpi/A_ScreenDPI:0)
     }
     static _getDpiForWindow(winTitle)    {
