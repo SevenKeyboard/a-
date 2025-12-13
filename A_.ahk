@@ -18,6 +18,8 @@ class VersionManager_A_
     _init()    {
         global
         A__VERSION := "1.0.0"
+        if (!this._verCheck(GETKNOWNFOLDERPATH_VERSION, "1.0.0"))
+            throw exception("getKnownFolderPath version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(GUICONTROLGETLOGFONT_VERSION, "1.0.0"))
             throw exception("guiControlGetLogFont version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(OSVERSION_VERSION, "2.0.0"))
