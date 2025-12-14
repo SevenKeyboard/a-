@@ -31,7 +31,7 @@ class VersionManager_A_
             return false
         actualMajor     := strSplit(actual, ".",, 2)[1]
         requiredMajor   := strSplit(required, ".",, 2)[1]
-        if (actualMajor != requiredMajor)
+        if (actualMajor !== requiredMajor)
             return false
         return verCompare(actual, ">=" required)
     }
