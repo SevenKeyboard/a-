@@ -111,7 +111,7 @@ class A_
     static SystemDefaultLocaleName    { ;  "ko-KR"
         get  { ;  https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getsystemdefaultlocalename
             static LOCALE_NAME_MAX_LENGTH:=85
-            lpLocaleName:=buffer(bufferSize:=LOCALE_NAME_MAX_LENGTH*A_PtrSize, 0)
+            lpLocaleName:=buffer(bufferSize:=LOCALE_NAME_MAX_LENGTH*2, 0)
             length:=dllCall("Kernel32\GetSystemDefaultLocaleName", "Ptr",lpLocaleName.Ptr, "Int",cchLocaleName:=LOCALE_NAME_MAX_LENGTH, "Int")
             return strGet(lpLocaleName.Ptr, length, "UTF-16")
         }
@@ -124,7 +124,7 @@ class A_
     static UserDefaultLocaleName    { ;  "en-US"
         get  { ;  https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getuserdefaultlocalename
             static LOCALE_NAME_MAX_LENGTH:=85
-            lpLocaleName:=buffer(bufferSize:=LOCALE_NAME_MAX_LENGTH*A_PtrSize, 0)
+            lpLocaleName:=buffer(bufferSize:=LOCALE_NAME_MAX_LENGTH*2, 0)
             length:=dllCall("Kernel32\GetUserDefaultLocaleName", "Ptr",lpLocaleName.Ptr, "Int",cchLocaleName:=LOCALE_NAME_MAX_LENGTH, "Int")
             return strGet(lpLocaleName.Ptr, length, "UTF-16")
         }
