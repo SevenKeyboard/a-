@@ -22,8 +22,8 @@ class VersionManager_A_
             throw error("getKnownFolderPath version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(&GUICONTROLGETLOGFONT_VERSION, "1.0.0"))
             throw error("guiControlGetLogFont version 1.x is required (minimum 1.0.0).")
-        if (!this._verCheck(&OSVERSION_VERSION, "1.0.0"))
-            throw error("OSVersion version 2.x is required (minimum 1.0.0).")
+        if (!this._verCheck(&OSVERSION_VERSION, "2.0.0"))
+            throw error("OSVersion version 2.x is required (minimum 2.0.0).")
         return true
     }
     static _verCheck(&actual, required)    {
