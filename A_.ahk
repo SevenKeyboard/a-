@@ -436,7 +436,7 @@ class A_
     KeyboardDelay    {
         get  {
             regRead keyboardDelay, HKEY_CURRENT_USER\Control Panel\Keyboard, KeyboardDelay
-            if (!errorLevel)
+            if (errorLevel)
                 return 500
             switch (keyboardDelay)
             {
