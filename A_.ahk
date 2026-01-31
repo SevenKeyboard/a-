@@ -435,10 +435,10 @@ class A_
     ;  A_.KeyboardDelay
     KeyboardDelay    {
         get  {
-            regRead KeyboardDelay, HKEY_CURRENT_USER\Control Panel\Keyboard, KeyboardDelay
-            if (!ErrorLevel)
+            regRead keyboardDelay, HKEY_CURRENT_USER\Control Panel\Keyboard, KeyboardDelay
+            if (!errorLevel)
                 return 500
-            switch (KeyboardDelay)
+            switch (keyboardDelay)
             {
                 case 0:     return 250
                 case 1:     return 500
@@ -452,8 +452,8 @@ class A_
     ;  A_.DoubleClickSpeed
     DoubleClickSpeed    {
         get  {
-            regRead DoubleClickSpeed, HKEY_CURRENT_USER\Control Panel\Mouse, DoubleClickSpeed
-            return (!ErrorLevel?DoubleClickSpeed:500)
+            regRead doubleClickSpeed, HKEY_CURRENT_USER\Control Panel\Mouse, DoubleClickSpeed
+            return (!errorLevel?doubleClickSpeed:500)
         }
     }
 }
