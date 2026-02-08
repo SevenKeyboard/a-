@@ -320,7 +320,7 @@ class A_
     }
     CommandLineArguments    {
         get  {
-            static vArguments:=regExReplace(regExReplace(getCommandLine(),"s)^(?:""\Q" A_.CommandLineExecutablePath "\E""|\Q" A_.CommandLineExecutablePath "\E)(.*)","${1}"),"s)^ (.*)","${1}")
+            static vArguments:=regExReplace(getCommandLine(),"\A(""?)\Q" regExReplace(A_.CommandLineExecutablePath,"\\E","\E\\E\Q") "\E\g{1}[ \t]*")
             return vArguments
         }
     }
