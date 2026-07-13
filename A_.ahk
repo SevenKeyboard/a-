@@ -17,7 +17,7 @@ class VersionManager_A_
     static _ := VersionManager_A_._init()
     _init()    {
         global
-        A__VERSION := "1.0.0"
+        A__VERSION := "1.0.1"
         if (!this._verCheck(GETKNOWNFOLDERPATH_VERSION, "1.0.0"))
             throw exception("getKnownFolderPath version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(GUICONTROLGETLOGFONT_VERSION, "1.0.0"))
@@ -386,12 +386,12 @@ class A_
         }
         Style(guiname:="")    {
             static GWL_STYLE:=-16
-            if (hWnd:=this.GuiHwnd(guiname))
+            if (hWnd:=A_.GuiHwnd(guiname))
                 return dllCall("User32.dll\GetWindowLong" (A_PtrSize==8?"Ptr":""), "Ptr",hWnd, "Int",GWL_STYLE, (A_PtrSize==8?"Ptr":"Int"))
         }
         ExStyle(guiname:="")    {
             static GWL_EXSTYLE:=-20
-            if (hWnd:=this.GuiHwnd(guiname))
+            if (hWnd:=A_.GuiHwnd(guiname))
                 return dllCall("User32.dll\GetWindowLong" (A_PtrSize==8?"Ptr":""), "Ptr",hWnd, "Int",GWL_EXSTYLE, (A_PtrSize==8?"Ptr":"Int"))
         }
     }
