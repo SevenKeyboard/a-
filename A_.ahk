@@ -17,7 +17,7 @@ class VersionManager_A_
     static _ := this._init()
     static _init()    {
         global
-        A__VERSION := "1.0.0"
+        A__VERSION := "1.0.1"
         if (!this._verCheck(&GETKNOWNFOLDERPATH_VERSION, "1.0.0"))
             throw error("getKnownFolderPath version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(&GUICONTROLGETLOGFONT_VERSION, "1.0.0"))
